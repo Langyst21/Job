@@ -10,9 +10,14 @@ const sumOfSquareDigits = (num) => {
 };
   
 const isHappyNumber = (num) => {
-    for (let i = 1; i < 10; i++) {
-      ;
+  let number = num;
+  for (let i = 0; i < 10; i += 1) {
+    number = sumOfSquareDigits(number);
+    if (number === 1) {
+      return true;
     }
+  }
+  return false;
 };
 
 console.log(isHappyNumber(7));
